@@ -1,0 +1,4 @@
+<div class="container">
+    <app-card [isBid]="true" [records]="(bids$ | async) || []"></app-card>
+    <app-card [isBid]="false" [records]="(asks$ | async) || []"></app-card>
+  </div>  

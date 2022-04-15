@@ -1,1 +1,5 @@
-<p>header works!</p>
+<div class="header" [class.bid]="isBid" [class.ask]="!isBid">
+    <p class="size">Size</p>
+    <div class="spacing"></div>
+    <p class="bid-ask">{{isBid ? "Bid" : "Ask"}}</p>
+</div>

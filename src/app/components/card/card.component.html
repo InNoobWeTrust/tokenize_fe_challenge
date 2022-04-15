@@ -1,1 +1,14 @@
-<p>card works!</p>
+<div class="card">
+    <app-header [isBid]="isBid"></app-header>
+    <hr>
+    <ng-container *ngFor="let record of records">
+        <app-row [isBid]="isBid" [size]="record.size" [price]="record.price"></app-row>
+    </ng-container>
+    <hr>
+    <ng-container *ngIf="isBid; else ask">
+        <app-bid-info [records]="records" ></app-bid-info>
+    </ng-container>
+    <ng-template #ask>
+        <app-ask-info [records]="records"></app-ask-info>
+    </ng-template>
+</div>

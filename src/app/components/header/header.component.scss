@@ -1,0 +1,17 @@
+:host {
+    color: gray;
+    display: flex;
+
+    &.bid {
+        flex-direction: row;
+    }
+
+    &.ask {
+        flex-direction: row-reverse;
+    }
+
+    .spacing {
+        flex: 1;
+        min-width: 4rem;
+    }
+}

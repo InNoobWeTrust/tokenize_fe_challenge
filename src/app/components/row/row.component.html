@@ -1,1 +1,5 @@
-<p>row works!</p>
+<div class="row" [class.bid]="isBid" [class.ask]="!isBid">
+    <p class="size">{{ size }}</p>
+    <div class="spacing"></div>
+    <p class="price">{{ price }}</p>
+</div>
