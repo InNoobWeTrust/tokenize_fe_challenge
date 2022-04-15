@@ -1,11 +1,11 @@
 :host {
     display: flex;
 
-    .bid {
+    &.bid {
         flex-direction: row;
     }
 
-    .ask {
+    &.ask {
         flex-direction: row-reverse;
     }
 
