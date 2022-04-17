@@ -51,8 +51,8 @@ const fuzzOrders = (low, high, num, adjust) => {
   return orders;
 }
 
-const askSizeAdjust = (prices, sizes) => {
-  const total = sizes.reduce((prev, curr) => prev + curr);
+const askSizeAdjust = (_prices, sizes) => {
+  const total = sizes.reduce((prev, curr) => prev + curr, 0);
   if  (total < 150) return sizes;
   const adjustment = 150 / total;
   return sizes.map(item => item * adjustment);
@@ -65,8 +65,7 @@ const bidSizeAdjust = (prices, sizes) => {
   }, 0);
 
   if (totalVolume < 5) return sizes;
-  const avgPrice = prices.reduce((prev, curr) => prev + curr) / prices.length;
-  const totalSize = sizes.reduce((prev, curr) => prev + curr);
+  const avgPrice = prices.reduce((prev, curr) => prev + curr, 0) / prices.length;
   const adjustment = 5 / totalVolume / avgPrice;
   return sizes.map(item => item * adjustment);
 }

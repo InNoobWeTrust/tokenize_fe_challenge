@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject, interval, mergeMap, Observable, Subscription, tap } from 'rxjs';
 import { BookingList } from '../types/booking';
 
-const API = './netlify/functions/server/market/10';
+const API = '.netlify/functions/server/market/10';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +13,7 @@ export class BookingService {
   bookings$: Observable<BookingList> = this._bookingSubject$.asObservable();
   private _subscriptions: Subscription[] = [];
 
-  constructor(private _http: HttpClient) {
+  constructor(_http: HttpClient) {
     const firstReqSub = _http.get<BookingList>(API).subscribe((bookingList: BookingList) => {
       this._bookingSubject$.next(bookingList);
       firstReqSub.unsubscribe();
