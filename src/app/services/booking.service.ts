@@ -14,9 +14,8 @@ export class BookingService {
   private _subscriptions: Subscription[] = [];
 
   constructor(_http: HttpClient) {
-    const firstReqSub = _http.get<BookingList>(API).subscribe((bookingList: BookingList) => {
+    _http.get<BookingList>(API).subscribe((bookingList: BookingList) => {
       this._bookingSubject$.next(bookingList);
-      firstReqSub.unsubscribe();
       this._subscriptions.push(
         interval(30000).pipe(
           mergeMap(() => _http.get<BookingList>(API)),
