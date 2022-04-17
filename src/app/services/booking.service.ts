@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject, interval, mergeMap, Observable, Subscription, tap } from 'rxjs';
 import { BookingList } from '../types/booking';
 
-const API = '.netlify/functions/server/market/10';
+const API = '/.netlify/functions/server/market/10';
 
 @Injectable({
   providedIn: 'root'
