@@ -12,7 +12,7 @@ export class AskInfoComponent implements OnInit {
 
   get size(): number {
     return this.records.map(record => record.size)
-      .reduce((prev, curr) => prev + curr)
+      .reduce((prev, curr) => prev + curr, 0)
   }
 
   constructor() { }
